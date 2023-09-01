@@ -1,0 +1,13 @@
+function tempMIX4=generatemembranemask(tempMIX0,sz1b,sz1s,th0_1a,th1_1a,th0_2a,th1_2a)
+
+%%
+tempMIX1=bgsub(tempMIX0,sz1b,0.05);
+tempMIX1a=imadjust(mat2gray(tempMIX1));
+tempMIX2=bgsub(tempMIX0,sz1s,0.05);
+tempMIX2a=imadjust(mat2gray(tempMIX2));
+
+%%
+msk1=im2bw(tempMIX2a,th0_2a);
+msk2=im2bw(tempMIX1a,th0_1a);
+%msk3=(im2bw(tempMIX2a,th1_2a)&im2bw(tempMIX1a,th1_1a));
+tempMIX4=msk1|msk2;%|msk3;

@@ -1,0 +1,23 @@
+function bg=easybg(img,mask,dmb)
+% img: original image
+% mask: mask of original image
+% dm: direction of background
+
+%%
+sz=size(img);
+
+%% easy background
+signalsum=sum(img.*(~mask),dmb);
+masksum=sum(~mask,dmb);
+signalavg=signalsum./masksum;
+
+%% fill gap if any
+if sum(isnan(signalavg))>0
+    
+end
+    
+%% smoothen
+signalsmo=imfilter(signalavg,fspecial('gaussian',round(sz(2)/10),sz(2)/20),'replicate');
+
+%%
+bg=ones(sz(1),1)*signalsmo;
