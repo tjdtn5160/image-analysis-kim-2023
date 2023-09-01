@@ -42,11 +42,9 @@ ImageOption='multisite';
 
 binning=2;
 %%% set paths %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-projectpath='D:\1. Projects\2. Melanoma project\';
-imagepath='E:\Data for Drug resistance\';
-experimentpath='2020-11-03 (Melanoma_ERK-CDK2-CDK4-H2B; WM983B_EGFR induction_2nd)\';
-
-%cmosoffsetfile='\Volumes\HW_Data\3. Processing data\IXmicro\CameraNoise\cmosoffset_bin2.mat';
+projectpath='D:\';
+imagepath='E:\';
+experimentpath='Folder\';
 
 %shot=wellnum2str(row,col,site);
 saveshot=[num2str(row),'_',num2str(col),'_',num2str(site)];
